@@ -1,16 +1,20 @@
 def ask_user():
 
     conversation = {
-        "Как дела?": "Хорошо",
-        "Что делаешь?": "Программирую",
-        "На чем программируешь?": "На питоне"}
-    question = input("Задай мне вопрос")
-    while question in conversation:
+        'Как дела?': 'Хорошо',
+        'Что делаешь?': 'Программирую',
+        'На чем программируешь?': 'На питоне'}
+    question = input("Задай мне вопрос: ")
+    while True:
         try:
-            print(conversation[question])
-            question = input()
+            if question in conversation:
+                print(conversation[question])
+                question = input()
+            else:
+                print('Я не понимаю, задай другой вопрос')
+                question = input()
         except KeyboardInterrupt:
-            print("Пока!")
+            print('Пока!')
             break
 
 
@@ -23,9 +27,9 @@ def discounted(price, discount, max_discount=20):
         else:
             return price - (price * discount / 100)
     except TypeError:
-        print("Строковые данные, нужно число")
+        print('Строковые данные, нужно число')
 
-#ask_user()
-discounted(100, "цена")
-discounted("цена", 5)
+ask_user()
+discounted(100, 'цена')
+discounted('цена', 5)
 

@@ -5,10 +5,10 @@ PROXY = {'proxy_url': 'socks5://t1.learn.python.ru:1080',
     'urllib3_proxy_kwargs': {'username': 'learn', 'password': 'python'}}
 
 def main():
-    mybot = Updater("1009548683:AAGlZzwxdpoT5Dcjb-_f5OMQ-ZUeB-ik_y0", request_kwargs=PROXY)
+    mybot = Updater('1009548683:AAGlZzwxdpoT5Dcjb-_f5OMQ-ZUeB-ik_y0', request_kwargs=PROXY)
     dp = mybot.dispatcher
-    dp.add_handler(CommandHandler("start", greet_user))
-    dp.add_handler(CommandHandler("planet", planet))
+    dp.add_handler(CommandHandler('start', greet_user))
+    dp.add_handler(CommandHandler('planet', planet))
     mybot.start_polling()
     mybot.idle()
 
